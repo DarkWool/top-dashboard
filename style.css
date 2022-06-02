@@ -4,10 +4,117 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 html {
     font-size: 10px;
 }
 
 body {
     margin: 0;
+    font-family: Helvetica;
+    font-size: 1.6rem;
+    line-height: 1.2;
+}
+
+h3, p {
+    margin: 0;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+.dashb {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 180px 1fr;
+    min-height: 100%;
+}
+
+.dashb_sidebar {
+    grid-row: 1 / 3;
+    background-color: hsl(202, 74%, 47%);
+    color: white;
+    padding: 15px 25px;
+}
+
+.dashb_main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "projects news"
+        "projects trending";
+    gap: 20px;
+    padding: 20px;
+    background-color: hsl(216, 33%, 91%);
+}
+
+.dashb_main > div:first-child {
+    grid-area: projects;
+}
+
+.main_proj {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.proj-card {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: white;
+    border-left: 8px solid hsl(197, 100%, 50%);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.05);
+}
+
+.proj-card_icons {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+
+/* Buttons */
+button {
+    appearance: none;
+    background-color: unset;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.icon-btn {
+    transition: all 0.1s ease;
+    background-color: hsl(213, 70%, 96%);
+    border: 1px solid hsl(211, 100%, 93%);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+    background-color: hsl(213, 50%, 90%);
+    border: 1px solid hsl(211, 50%, 90%);
+}
+
+.icon-btn > svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+    fill: hsl(213, 12%, 20%);
+    z-index: 1;
+    position: relative;
+}
+
+.icon-btn:hover > svg {
+    fill: hsl(213, 12%, 45%);
 }
