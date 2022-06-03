@@ -20,7 +20,7 @@ body {
     line-height: 1.2;
 }
 
-h3, p {
+h3, h4, p {
     margin: 0;
 }
 
@@ -37,7 +37,7 @@ h3 {
 
 .dashb_sidebar {
     grid-row: 1 / 3;
-    background-color: hsl(202, 74%, 47%);
+    background-color: hsl(216, 8.5%, 11.6%);
     color: white;
     padding: 15px 25px;
 }
@@ -45,11 +45,12 @@ h3 {
 .dashb_main {
     display: grid;
     grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 1fr;
     grid-template-areas: "projects news"
         "projects trending";
     gap: 20px;
     padding: 20px;
-    background-color: hsl(216, 33%, 91%);
+    background-color: hsl(215, 42.9%, 94.5%);
 }
 
 .dashb_main > div:first-child {
@@ -79,6 +80,62 @@ h3 {
     align-items: center;
     gap: 15px;
     margin-top: 20px;
+}
+
+
+.main_news, .main_trend {
+    background-color: white;
+    border-radius: 8px;
+    /* box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.05); */
+}
+
+.main_news {
+    padding: 30px;
+}
+
+.main_news h3 {
+    font-size: 1.6rem;
+}
+
+.main_news p {
+    font-size: 1.4rem;
+}
+
+hr {
+    margin: 20px 0;
+    border: 1px solid hsl(214.3, 70%, 90%);
+}
+
+.main_trend {
+    gap: 5px;
+    display: grid;
+    padding: 20px;
+}
+
+.trend-user {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid white;
+    transition: 0.15s background-color ease;
+}
+
+.trend-user:hover {
+    background-color: hsl(212, 59%, 94%);
+    border: 1px solid hsl(219, 100%, 94%);
+}
+
+.trend-img {
+    border-radius: 100%;
+    max-width: 50px;
+}
+
+.main_trend p {
+    color: hsl(227, 9%, 38%);
 }
 
 
