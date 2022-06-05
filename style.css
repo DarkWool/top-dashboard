@@ -7,7 +7,7 @@
 }
 
 :root {
-    --accent: hsl(3, 90%, 45%);
+    --accent: hsl(3.4, 77.2%, 49.8%);
 }
 
 html,
@@ -48,7 +48,7 @@ img {
 input {
     appearance: none;
     border: none;
-    background-color: hsl(215, 43%, 95%);
+    background-color: hsl(215, 44%, 94%);
     padding: 10px 15px;
     border-radius: 50px;
     max-width: 100%;
@@ -69,7 +69,7 @@ ul {
 
 .dashb {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-rows: auto 1fr;
     min-height: 100%;
 }
@@ -147,6 +147,7 @@ ul {
     grid-auto-flow: column;
     gap: 25px;
     align-items: center;
+    justify-content: end;
 }
 
 
@@ -192,6 +193,9 @@ ul {
 
 .sb-item.active {
     font-weight: bold;
+    background-color: hsl(216, 16%, 19%);
+    padding: 10px 0;
+    border-radius: 8px;
 }
 
 .sb-item svg {
@@ -227,7 +231,8 @@ ul {
 
 .main_proj {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: minmax(325px, 1fr);
     gap: 25px;
 }
 
@@ -289,11 +294,6 @@ hr {
     transition: 0.15s background-color ease;
 }
 
-.trend-user:hover {
-    background-color: hsl(212, 59%, 94%);
-    border: 1px solid hsl(219, 100%, 94%);
-}
-
 .trend-img {
     border-radius: 100%;
     max-width: 50px;
@@ -313,10 +313,11 @@ button {
 .primary-btn {
     background-color: var(--accent);
     color: white;
-    padding: 10px 30px;
+    padding: 12px 40px;
     border-radius: 50px;
     font-weight: 500;
     font-size: 1.6rem;
+    transition: 0.2s background-color ease;
 }
 
 .icon-btn {
@@ -327,12 +328,6 @@ button {
     padding: 5px;
 }
 
-.icon-btn:hover {
-    transform: scale(1.1);
-    background-color: hsl(213, 50%, 90%);
-    border: 1px solid hsl(211, 50%, 90%);
-}
-
 .icon-btn > svg {
     width: 24px;
     height: 24px;
@@ -340,10 +335,6 @@ button {
     fill: hsl(213, 12%, 20%);
     z-index: 1;
     position: relative;
-}
-
-.icon-btn:hover > svg {
-    fill: hsl(213, 12%, 45%);
 }
 
 
@@ -361,16 +352,35 @@ button {
     height: 24px;
 }
 
-.header-icon:hover {
-    fill: grey;
-    transform: scale(1.2);
-}
 
 
+@media (hover:hover) {
+    .header-icon:hover {
+        fill: grey;
+        transform: scale(1.2);
+    }
 
-@media (hover: hover) {
     .sb-item:hover {
         fill: var(--accent);
         color: hsl(207, 20%, 82%);
+    }
+
+    .primary-btn:hover {
+        background-color: hsl(0, 98.8%, 30%);
+    }
+
+    .icon-btn:hover {
+        transform: scale(1.1);
+        background-color: hsl(213, 50%, 90%);
+        border: 1px solid hsl(211, 50%, 90%);
+    }
+
+    .icon-btn:hover > svg {
+        fill: hsl(213, 12%, 45%);
+    }
+
+    .trend-user:hover {
+        background-color: hsl(212, 59%, 94%);
+        border: 1px solid hsl(219, 100%, 94%);
     }
 }
