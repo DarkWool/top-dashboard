@@ -138,7 +138,7 @@ ul {
     align-self: start;
     margin-bottom: 0;
     font-weight: 800;
-    font-size: 2.8rem;
+    font-size: clamp(1.8rem, 1vw + 1rem, 2.8rem);
 }
 
 
@@ -189,6 +189,7 @@ ul {
 
 .sb-item {
     font-size: 2rem;
+    fill: white;
 }
 
 .sb-item.active {
@@ -232,7 +233,7 @@ ul {
 .main_proj {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-template-rows: minmax(325px, 1fr);
+    grid-auto-rows: minmax(325px, 1fr);
     gap: 25px;
 }
 
@@ -315,7 +316,7 @@ button {
     color: white;
     padding: 12px 40px;
     border-radius: 50px;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 1.6rem;
     transition: 0.2s background-color ease;
 }
@@ -354,7 +355,8 @@ button {
 
 
 
-@media (hover:hover) {
+/* Media queries */
+@media (hover: hover) {
     .header-icon:hover {
         fill: grey;
         transform: scale(1.2);
@@ -382,5 +384,78 @@ button {
     .trend-user:hover {
         background-color: hsl(212, 59%, 94%);
         border: 1px solid hsl(219, 100%, 94%);
+    }
+}
+
+
+@media only screen and (max-width: 992px) {
+    .dashb {
+        grid-template-columns: 1fr;
+    }
+
+    .dashb_main {
+        grid-template-columns: 5fr 3fr;
+    }
+
+    .dashb_sidebar {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 1.4rem;
+    }
+
+    .dashb {
+        grid-template-areas: none;
+    }
+
+    .dashb_header {
+        padding: 15px;
+        grid-template-columns: 1fr;
+    }
+
+    .header_search {
+        gap: 10px;
+    }
+
+    .header_profile {
+        display: none;
+    }
+
+    .user-img {
+        width: 50px;
+    }
+
+    .header_actions {
+        justify-content: center;
+    }
+
+
+    .dashb_main {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+        gap: 30px;
+        padding: 35px 20px;
+    }
+
+    .dashb_main > div:first-child {
+        grid-area: initial;
+    }
+
+    .main_proj {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-rows: minmax(250px, 1fr);
+    }
+
+    .proj-card {
+        padding: 25px;
+    }
+
+    .primary-btn {
+        padding: 10px 20px;
+        font-size: 1.4rem;
     }
 }
